@@ -336,15 +336,17 @@ License along with this library. If not, see <https://www.gnu.org/licenses/>.
         <term><varname>sign-verify</varname></term>
         <listitem><para>Controls whether OSTree will require commits to be
         signed by a known key using one of the non-GPG signature engines
-        (currently <literal>ed25519</literal>). If unset or empty, no such
-        verification is performed.</para>
+        (currently <literal>ed25519</literal>). If unset, empty, or set to a
+        boolean-false value (<literal>false</literal> or
+        <literal>0</literal>), no such verification is performed.</para>
         <para>A boolean-true value enables every compiled-in signature engine.
         Keys are optional in this case: an engine with no
         <varname>verification-&lt;engine&gt;</varname> option set for the
         remote is still enabled, and falls back to the system-wide key
-        storage. Any other value is read as a list of engine names; a commit
-        must then carry a valid signature from each named engine, and keys for
-        those engines become mandatory rather than optional.</para>
+        storage. Any other value is read as a semicolon-delimited list of
+        engine names. Keys for each named engine then become mandatory rather
+        than optional, and a commit is accepted if any one of the named
+        engines finds a valid signature for it.</para>
         <para>Public keys are supplied by the companion options
         <varname>verification-&lt;engine&gt;-key</varname>, holding an inline
         key, and <varname>verification-&lt;engine&gt;-file</varname>, holding a
