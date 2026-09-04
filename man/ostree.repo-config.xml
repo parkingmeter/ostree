@@ -338,11 +338,13 @@ License along with this library. If not, see <https://www.gnu.org/licenses/>.
         signed by a known key using one of the non-GPG signature engines
         (currently <literal>ed25519</literal>). If unset or empty, no such
         verification is performed.</para>
-        <para>A boolean-true value enables every compiled-in signature engine
-        for which keys happen to be configured. Any other value is read as a
-        list of engine names; a commit must then carry a valid signature from
-        each named engine, and keys for those engines become mandatory rather
-        than optional.</para>
+        <para>A boolean-true value enables every compiled-in signature engine.
+        Keys are optional in this case: an engine with no
+        <varname>verification-&lt;engine&gt;</varname> option set for the
+        remote is still enabled, and falls back to the system-wide key
+        storage. Any other value is read as a list of engine names; a commit
+        must then carry a valid signature from each named engine, and keys for
+        those engines become mandatory rather than optional.</para>
         <para>Public keys are supplied by the companion options
         <varname>verification-&lt;engine&gt;-key</varname>, holding an inline
         key, and <varname>verification-&lt;engine&gt;-file</varname>, holding a
