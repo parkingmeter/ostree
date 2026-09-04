@@ -271,9 +271,8 @@ License along with this library. If not, see <https://www.gnu.org/licenses/>.
         <para>This option cannot require a delta to be signed. It is consulted
         only after a delta has been found to carry a signature, so an unsigned
         delta is applied whatever this is set to. It also has no effect on
-        <command>ostree pull</command>, which cannot consume signed deltas at
-        all; see
-        <citerefentry><refentrytitle>ostree-static-delta</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
+        <command>ostree pull</command>, which cannot consume signed deltas at all;
+        see <citerefentry><refentrytitle>ostree-static-delta</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
         </para></listitem>
       </varlistentry>
     </variablelist>
