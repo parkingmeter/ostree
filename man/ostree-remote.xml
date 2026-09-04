@@ -157,7 +157,7 @@ License along with this library. If not, see <https://www.gnu.org/licenses/>.
                     <literal>ed25519</literal>. The key is given either
                     literally, as <literal>inline:PUBKEY</literal>, or as a
                     path to a file of keys, as
-                    <literal>file:/path/to/keys</literal>. May be repeated.
+                    <literal>file:/path/to/keys</literal>.
                 </para><para>
                     This writes the <varname>sign-verify</varname> option and
                     the matching <varname>verification-KEYTYPE-key</varname> or
